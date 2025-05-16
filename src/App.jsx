@@ -20,7 +20,8 @@ function App() {
       })
       .then((json) => {
         console.log(json.species.name);
-        // Maybe you should change the state
+        // Maybe you should change the state like this:
+        setData(json);
       })
       .catch((error)=> {
         console.error(error.message);
@@ -46,7 +47,8 @@ function App() {
           count is {count}
         </button>
         <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
+          {data ? `Pokemon: ${data.species.name}` : 'Loading...'}
+          {/* Edit <code>src/App.jsx</code> and save to test HMR */}
         </p>
       </div>
       <p className="read-the-docs">
